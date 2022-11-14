@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import noimg from "../assets/img/pricing-free.png";
 
-const Card = ({ result }) => {
+const Card = ({ result, radiooption }) => {
   if (result.length === 0) {
     return (
       <>
@@ -23,26 +24,78 @@ const Card = ({ result }) => {
                   colorCount = -1;
                 }
                 colorCount++;
-                return (
-                  <div
-                    className="col-lg-4 col-md-6"
-                    key={result[index].show.id}
-                  >
-                    <div className={`service-box ${cardcolor[colorCount]}`}>
-                      <i className="ri-discuss-line icon"></i>
-                      <h3>{result[index].show.name}</h3>
-                      <p>
-                        Provident nihil minus qui consequatur non omnis maiores.
-                        Eos accusantium minus dolores iure perferendis tempore
-                        et consequatur.
-                      </p>
-                      <Link to="#" className="read-more">
-                        <span>Read More</span>{" "}
-                        <i className="bi bi-arrow-right"></i>
-                      </Link>
+                if (result[index].show) {
+                  if (result[index].show.image == null) {
+                    result[index].show.image = noimg;
+                  }
+                  return (
+                    <div
+                      className="col-lg-4 col-md-6"
+                      key={result[index].show.id}
+                    >
+                      <div className={`service-box ${cardcolor[colorCount]}`}>
+                        <img
+                          src={
+                            result[index].show.image.medium ||
+                            result[index].show.image
+                          }
+                          alt=""
+                        />
+                        <h3>{result[index].show.name}</h3>
+                        <p>
+                          {" "}
+                          {result[index].show.summary
+                            ? `${result[index].show.summary
+                                .split(" ")
+                                .slice(0, 20)
+                                .join(" ")
+                                .replace(/<.+?>/g, "")}...`
+                            : "no discription"}{" "}
+                        </p>
+                        <Link
+                          to={`show/${result[index].show.id}`}
+                          className="read-more"
+                        >
+                          <span>Read More</span>{" "}
+                          <i className="bi bi-arrow-right"></i>
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                );
+                  );
+
+                  //this is repeated one
+                } else {
+                  if (result[index].person.image == null) {
+                    result[index].person.image = noimg;
+                  }
+                  return (
+                    <div
+                      className="col-lg-4 col-md-6"
+                      key={result[index].person.id}
+                    >
+                      <div className={`service-box ${cardcolor[colorCount]}`}>
+                        <img
+                          src={
+                            result[index].person.image.medium ||
+                            result[index].person.image
+                          }
+                          alt=""
+                        />
+                        <h3>{result[index].person.name}</h3>
+                        {result[index].person.country
+                          ? result[index].person.country.name
+                          : `country data not available`}
+                        <Link
+                          to={`/people/${result[index].person.id}`}
+                          className="read-more"
+                        >
+                          <span>Read More</span>{" "}
+                          <i className="bi bi-arrow-right"></i>
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                }
               })}
             </div>
           </div>

@@ -1,7 +1,9 @@
+import React from "react";
+import Nopage from "../components/Nopage";
 function Notfound() {
   return (
     <>
-      <h1>this page is not not</h1>
+      <Nopage></Nopage>
     </>
   );
 }
