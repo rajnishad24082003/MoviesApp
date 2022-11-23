@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import noimg from "../assets/img/pricing-free.png";
-
+import useShows from "../misc/custom-hooks";
 const Card = ({ result, radiooption }) => {
   if (result.length === 0) {
     return (

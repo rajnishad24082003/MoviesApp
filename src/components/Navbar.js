@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useReducer } from "react";
 import { apiget } from "../misc/config";
 import Card from "./Card";
 import Title from "./Title";

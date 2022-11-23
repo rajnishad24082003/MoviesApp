@@ -2441,3 +2441,17 @@ section {
   font-size: 13px;
   color: #012970;
 }
+.showshidden {
+  font-size: 10px;
+  color: #00000088;
+  width: fit-content;
+  cursor: pointer;
+  transition: font-size 0.3s;
+}
+.showshidden > i {
+  padding: 2px;
+}
+.showshidden:hover {
+  font-size: 15px;
+  color: #000000;
+}

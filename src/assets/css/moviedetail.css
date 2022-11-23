@@ -1,0 +1,26 @@
+.mainmoviedetailcont {
+}
+
+.movieimgcont {
+}
+.movieimgcont > img {
+  height: 35rem;
+}
+.firstdetailcont {
+  display: flex;
+}
+.episodescontmain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  height: 35rem;
+  overflow-y: scroll;
+}
+.episodescont {
+  margin: 10px;
+}
+.episodescont > img {
+}
+.star {
+  font-size: 1rem;
+}
