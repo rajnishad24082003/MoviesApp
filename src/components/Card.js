@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import noimg from "../assets/img/pricing-free.png";
-import useShows from "../misc/custom-hooks";
+import { useShows } from "../misc/custom-hooks";
+
 const Card = ({ result, radiooption }) => {
+  let [starredshows, dispatchstarredshows] = useShows();
+
   if (result.length === 0) {
     return (
       <>
@@ -28,6 +31,20 @@ const Card = ({ result, radiooption }) => {
                   if (result[index].show.image == null) {
                     result[index].show.image = noimg;
                   }
+                  let isStarred = starredshows.includes(result[index].show.id);
+                  let starme = () => {
+                    if (isStarred) {
+                      dispatchstarredshows({
+                        type: "REMOVE",
+                        showId: result[index].show.id,
+                      });
+                    } else {
+                      dispatchstarredshows({
+                        type: "ADD",
+                        showId: result[index].show.id,
+                      });
+                    }
+                  };
                   return (
                     <div
                       className="col-lg-4 col-md-6"
@@ -59,6 +76,10 @@ const Card = ({ result, radiooption }) => {
                           <span>Read More</span>{" "}
                           <i className="bi bi-arrow-right"></i>
                         </Link>
+                        <br />
+                        <button className="btn border-dark" onClick={starme}>
+                          {`add to Favroites`}
+                        </button>
                       </div>
                     </div>
                   );
@@ -68,6 +89,20 @@ const Card = ({ result, radiooption }) => {
                   if (result[index].person.image == null) {
                     result[index].person.image = noimg;
                   }
+                  let isStarred = starredshows.includes(result[index].show.id);
+                  let starme = () => {
+                    if (isStarred) {
+                      dispatchstarredshows({
+                        type: "REMOVE",
+                        showId: result[index].show.id,
+                      });
+                    } else {
+                      dispatchstarredshows({
+                        type: "ADD",
+                        showId: result[index].show.id,
+                      });
+                    }
+                  };
                   return (
                     <div
                       className="col-lg-4 col-md-6"
@@ -92,6 +127,10 @@ const Card = ({ result, radiooption }) => {
                           <span>Read More</span>{" "}
                           <i className="bi bi-arrow-right"></i>
                         </Link>
+                        <br />
+                        <button className="btn border-dark" onClick={starme}>
+                          add to Favroites
+                        </button>
                       </div>
                     </div>
                   );

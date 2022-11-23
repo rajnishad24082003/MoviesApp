@@ -5,7 +5,7 @@ import { apiget } from "../misc/config";
 import Card from "./Card";
 import Title from "./Title";
 import "../assets/css/radio.scss";
-
+import { useShows } from "../misc/custom-hooks";
 const Navbar = () => {
   let [input, setinput] = useState("");
 
