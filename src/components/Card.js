@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import noimg from "../assets/img/pricing-free.png";
 import { useShows } from "../misc/custom-hooks";
 
 const Card = ({ result, radiooption }) => {
   let [starredshows, dispatchstarredshows] = useShows();
-
+  let [starchecker, setstarchecker] = useState(`add to Favroites`);
+  console.log(starredshows);
   if (result.length === 0) {
     return (
       <>
@@ -78,7 +79,16 @@ const Card = ({ result, radiooption }) => {
                         </Link>
                         <br />
                         <button className="btn border-dark" onClick={starme}>
-                          {`add to Favroites`}
+                          {console.log(
+                            starredshows.filter(
+                              (allid) => allid === result[index].show.id
+                            )
+                          )}
+                          {starredshows.filter(
+                            (allid) => allid === result[index].show.id
+                          ).length !== 0
+                            ? `starred`
+                            : `add to Favroites`}
                         </button>
                       </div>
                     </div>
@@ -129,7 +139,12 @@ const Card = ({ result, radiooption }) => {
                         </Link>
                         <br />
                         <button className="btn border-dark" onClick={starme}>
-                          add to Favroites
+                          {starredshows.filter(
+                            (allid) => allid === result[index].show.id
+                          ).length !== 0
+                            ? `starred`
+                            : `add to Favroites`}
+                          {}
                         </button>
                       </div>
                     </div>
