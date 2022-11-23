@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/MoviesApp/static/css/main.4a595674.css",
+    "main.js": "/MoviesApp/static/js/main.281e9793.js",
+    "static/media/remixicon.svg?t=1590207869815": "/MoviesApp/static/media/remixicon.9cedd2150922ead84869.svg",
+    "static/media/remixicon.eot?t=1590207869815": "/MoviesApp/static/media/remixicon.5cb99e6cba5a4619063f.eot",
+    "static/media/remixicon.ttf?t=1590207869815": "/MoviesApp/static/media/remixicon.f2616f597cf98f38d234.ttf",
+    "static/media/remixicon.woff?t=1590207869815": "/MoviesApp/static/media/remixicon.8d09fa11700ed63cf96e.woff",
+    "static/media/bootstrap-icons.woff?": "/MoviesApp/static/media/bootstrap-icons.e559bf06bc84fd9525e6.woff",
+    "static/media/remixicon.woff2?t=1590207869815": "/MoviesApp/static/media/remixicon.90668f6f9b3c2c18a090.woff2",
+    "static/media/bootstrap-icons.woff2?": "/MoviesApp/static/media/bootstrap-icons.ea98e12d2d58747f9fc5.woff2",
+    "static/media/footer-bg.png": "/MoviesApp/static/media/footer-bg.c2aae576a94b37c65f8f.png",
+    "static/media/team-shape.svg": "/MoviesApp/static/media/team-shape.6f9d1d5b17283b8712bb.svg",
+    "index.html": "/MoviesApp/index.html",
+    "main.4a595674.css.map": "/MoviesApp/static/css/main.4a595674.css.map",
+    "main.281e9793.js.map": "/MoviesApp/static/js/main.281e9793.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4a595674.css",
+    "static/js/main.281e9793.js"
+  ]
+}
