@@ -8,6 +8,7 @@ import "./assets/vendor/remixicon/remixicon.css";
 import "./assets/vendor/swiper/swiper-bundle.min.css";
 import "./assets/css/style.css";
 import "./index.css";
+import * as serviceWorker from "./serviceWorker";
 import App from "./App";
 import { HashRouter } from "react-router-dom";
 
@@ -18,4 +19,4 @@ root.render(
   </HashRouter>
 );
 
-ServiceWorker.register();
+serviceWorker.register();
