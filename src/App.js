@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Notfound from "./pages/Notfound";
 import Shows from "./pages/Shows";
 import People from "./pages/People";
+import Favroites from "./pages/Favroites";
 function App() {
   return (
     <div>
@@ -17,6 +18,7 @@ function App() {
           element={<People></People>}
         ></Route>
         <Route path="*" element={<Notfound />}></Route>
+        <Route exact={true} path="/fav" element={<Favroites />}></Route>
       </Routes>
     </div>
   );

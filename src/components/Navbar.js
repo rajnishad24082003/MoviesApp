@@ -85,7 +85,7 @@ const Navbar = () => {
                 </Link>
                 <ul>
                   <li>
-                    <Link to="#">Favroites</Link>
+                    <Link to="/fav">Favroites</Link>
                   </li>
                 </ul>
               </li>
